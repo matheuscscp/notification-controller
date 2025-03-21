@@ -1,5 +1,5 @@
 # Image URL to use all building/pushing image targets
-IMG ?= fluxcd/notification-controller:latest
+IMG ?= ghcr.io/matheuscscp/fluxcd/notification-controller:gh-app-auth-v2
 # Produce CRDs that work back to Kubernetes 1.16
 CRD_OPTIONS ?= crd:crdVersions=v1
 SOURCE_VER ?= v1.2.4
