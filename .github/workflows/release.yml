@@ -63,4 +63,4 @@ jobs:
       digest: ${{ needs.release.outputs.image-digest }}
       registry-username: fluxcdbot
     secrets:
-      registry-password: ${{ secrets.GHCR_TOKEN }}
+      registry-password: ${{ secrets.GITHUB_TOKEN }}
