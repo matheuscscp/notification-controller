@@ -46,7 +46,7 @@ jobs:
     with:
       image: ${{ needs.release.outputs.image-name }}
       digest: ${{ needs.release.outputs.image-digest }}
-      registry-username: fluxcdbot
+      registry-username: ${{ github.repository_owner == 'fluxcd' && 'fluxcdbot' || github.repository_owner }}
     secrets:
       registry-password: ${{ secrets.DOCKER_FLUXCD_PASSWORD }}
   ghcr-provenance:
@@ -61,6 +61,6 @@ jobs:
     with:
       image: ghcr.io/${{ needs.release.outputs.image-name }}
       digest: ${{ needs.release.outputs.image-digest }}
-      registry-username: fluxcdbot
+      registry-username: fluxcdbot # not necessary for ghcr.io
     secrets:
       registry-password: ${{ secrets.GITHUB_TOKEN }}
